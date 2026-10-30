@@ -6,6 +6,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '..', 'docs')  # GitHub Pages serves /docs
 SITE_NAME = 'PropMaster PCG'
 FAB_URL = '#'  # set when the Fab listing is live
+import hashlib
+CSS_VERSION = hashlib.md5(open(os.path.join(HERE, 'style.css'), 'rb').read()).hexdigest()[:8]  # new link whenever the style changes, so phones never keep an old copy
 
 
 def slug(text):
@@ -77,7 +79,7 @@ def page(title, body, active, description):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(description)}">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v={CSS_VERSION}">
 </head>
 <body>
 <header class="top">
