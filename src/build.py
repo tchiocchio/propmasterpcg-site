@@ -1,9 +1,9 @@
-"""Builds the PropMaster PCG website into ../site from guide.md, videos.json and the page templates below.
+"""Builds the PropMaster PCG website into ../docs from guide.md, videos.json and the page templates below.
 Run: python build.py   (no third-party packages; a small Markdown subset: headings, paragraphs, lists, tables, bold, code, links)."""
 import html, json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, '..', 'site')
+OUT = os.path.join(HERE, '..', 'docs')  # GitHub Pages serves /docs
 SITE_NAME = 'PropMaster PCG'
 FAB_URL = '#'  # set when the Fab listing is live
 
