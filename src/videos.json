@@ -1,0 +1,9 @@
+[
+  {"title": "Getting started", "url": "", "about": "Place a tool, add a mesh, and get your first result."},
+  {"title": "Spline tool", "url": "", "about": "Paths, walls and area fills, with clusters, landscape layers and tags."},
+  {"title": "Volume tool", "url": "", "about": "Rooms and objects: Projection, surface-facing faces and ray spacing."},
+  {"title": "Mesh Cover tool", "url": "", "about": "Moss, vines and decals on meshes already in the level."},
+  {"title": "Cover Mesh by Intent", "url": "", "about": "Top, Side and Bottom cover, Facing and tag strips."},
+  {"title": "Stack Vertical", "url": "", "about": "Walls, piles and rock formations from one mesh list."},
+  {"title": "Footprint and optimizing", "url": "", "about": "Read the cost numbers and measure what each optimize step saves."}
+]
