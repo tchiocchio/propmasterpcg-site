@@ -82,3 +82,10 @@ code { background: var(--code); padding: 2px 6px; border-radius: 5px; font-size:
   td:first-child { white-space: normal; }
   nav { gap: 12px; }
 }
+@media (max-width: 600px) {
+  .top-inner { height: auto; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; row-gap: 8px; }
+  nav { width: 100%; justify-content: space-between; gap: 8px; }
+  .btn.small { padding: 6px 12px; font-size: 13px; white-space: nowrap; }
+  .hero { padding: 48px 0 40px; }
+  .doc h2, .doc h3 { scroll-margin-top: 110px; }
+}
