@@ -56,6 +56,12 @@ Most changes regenerate on their own. Every random choice is seeded, so the same
 
 **Convert to Mesh** bakes the spawned meshes into a new plain actor where they are, and switches the tool's PCG off so nothing spawns twice. **Disable PCG** removes the spawned meshes and stops regenerating; **Enable PCG** switches it back on and regenerates. **Refresh** rebuilds the layers and regenerates, which you need after editing a preset asset, or on the Mesh Cover tool after moving the meshes it covers.
 
+#### Preset Controllers
+
+![Preset Controllers: Edit Presets, Save as Preset and the Presets list.](images/preset-controllers.png)
+
+**Presets** lists preset assets whose layers are added to the tool's own when it generates, so one setup can be reused across many tools. **Save as Preset** saves all of the tool's layers into a new Preset asset, ready to add to another tool of the same kind. **Edit Presets** copies every listed preset's layers into the tool's own layers, where you can edit them, and empties the Presets list so nothing spawns twice. The preset assets themselves are left untouched.
+
 ## Spline tool
 
 The Spline tool places meshes along a spline or fills the area inside a closed spline. Each layer runs through the sections below, top to bottom.
