@@ -20,6 +20,8 @@ All three share the same building blocks: layers of main meshes, Cluster Mesh ar
 
 ## Panel basics
 
+![A layer: its Layer Title is added in front of every section's name, and Mute / Solo sit right under it.](images/layer-title-mute-solo.png)
+
 Every tool's Details panel has the same top-level sections, in this order. Collapsing a layer and opening it again folds its sections, so long panels stay easy to scan.
 
 | Section | Setting or button | What it does |
