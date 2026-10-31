@@ -65,6 +65,9 @@ nav a.active, nav a:hover { color: var(--text); text-decoration: none; }
 .doc h2 { font-size: 28px; margin: 56px 0 12px; padding-top: 16px; border-top: 1px solid var(--line); scroll-margin-top: 76px; }
 .doc h3 { font-size: 19px; margin: 32px 0 10px; scroll-margin-top: 76px; }
 .doc p, .doc li { color: var(--text); }
+figure { margin: 16px 0 24px; }
+figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
+figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
 .table { overflow-x: auto; margin: 12px 0 20px; border: 1px solid var(--line); border-radius: 10px; }
 table { border-collapse: collapse; width: 100%; font-size: 15px; background: var(--surface); }
 th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }

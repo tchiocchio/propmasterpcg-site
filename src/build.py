@@ -40,6 +40,12 @@ def md_to_html(md):
             out.append('<h%d id="%s">%s</h%d>' % (level, anchor, inline(title), level))
             i += 1
             continue
+        m = re.match(r'^!\[([^\]]*)\]\(([^)]+)\)\s*$', line)
+        if m:
+            cap = m.group(1)
+            out.append('<figure><img src="%s" alt="%s" loading="lazy">%s</figure>' % (html.escape(m.group(2)), html.escape(cap), '<figcaption>%s</figcaption>' % inline(cap) if cap else ''))
+            i += 1
+            continue
         if line.startswith('|'):
             rows = []
             while i < len(lines) and lines[i].startswith('|'):
@@ -152,6 +158,9 @@ def build():
 
     import shutil
     shutil.copy(os.path.join(HERE, 'style.css'), os.path.join(OUT, 'style.css'))
+    images = os.path.join(HERE, '..', 'images')
+    if os.path.isdir(images):
+        shutil.copytree(images, os.path.join(OUT, 'images'), dirs_exist_ok=True)  # screenshots used by guide.md (![caption](images/x.png))
     open(os.path.join(OUT, 'CNAME'), 'w').write('propmasterpcg.com' + chr(10))  # GitHub Pages custom domain
     open(os.path.join(OUT, '.nojekyll'), 'w').write('')
     print('built', sorted(os.listdir(OUT)))

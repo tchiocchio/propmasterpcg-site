@@ -331,6 +331,8 @@ The Footprint section, under Footprint Controllers, shows what the tool made and
 
 ### When something looks wrong
 
+![Warnings explains problems in plain language, here a mesh without Nanite on a layer with many copies.](images/warnings-nanite.png)
+
 | Symptom | Check |
 | --- | --- |
 | Nothing spawns | **Warnings** first. Then Activate Main Mesh, an empty mesh list, Mute / Solo, and Density. |

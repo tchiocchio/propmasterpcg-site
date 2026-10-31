@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>User Guide | PropMaster PCG</title>
 <meta name="description" content="Every PropMaster PCG tool and setting, explained.">
-<link rel="stylesheet" href="style.css?v=cbc72e18">
+<link rel="stylesheet" href="style.css?v=5129d7da">
 </head>
 <body>
 <header class="top">
@@ -91,6 +91,7 @@
 <h3 id="keep-it-fast">Keep it fast</h3>
 <ul><li>Turn off <strong>Cast Shadow</strong> on dense small meshes (grass, pebbles, moss). It is usually the biggest single saving.</li><li>Turn off <strong>World Position Offset</strong> and <strong>Visible in Ray Tracing</strong> on dense grass and ground cover.</li><li>Add <strong>Cull Distance Start / End</strong> to small meshes; use Nanite meshes where you can.</li><li>Use <strong>Solo</strong> to tune one layer at a time, and <strong>Work in Debug Mode</strong> while dialing in placement.</li><li>Watch <strong>Decal Actors</strong> and <strong>Max Decals</strong>: every decal is an actor.</li><li>Use <strong>Set Baseline</strong> before an optimize pass and read <strong>Changes</strong> after each tweak.</li></ul>
 <h3 id="when-something-looks-wrong">When something looks wrong</h3>
+<figure><img src="images/warnings-nanite.png" alt="Warnings explains problems in plain language, here a mesh without Nanite on a layer with many copies." loading="lazy"><figcaption>Warnings explains problems in plain language, here a mesh without Nanite on a layer with many copies.</figcaption></figure>
 <div class="table"><table><thead><tr><th>Symptom</th><th>Check</th></tr></thead><tbody><tr><td>Nothing spawns</td><td><strong>Warnings</strong> first. Then Activate Main Mesh, an empty mesh list, Mute / Solo, and Density.</td></tr><tr><td>Meshes float or sink</td><td>Projection Type, Snap to Surface Max Distance, Projection Height and Depth; in the Volume tool, Offset From Surface.</td></tr><tr><td>Meshes don't follow the slope</td><td>Align to Surface on, and Absolute Rotation off.</td></tr><tr><td>Meshes on roads or paths</td><td>Never On Landscape Layer with a Clearance ring, or No Spawning on Tag on the road spline.</td></tr><tr><td>Volume dresses the wrong side</td><td>Check Projection (Inside a Room or Around Objects), then the Faces checkboxes against the labels on the box.</td></tr><tr><td>Mesh Cover finds nothing</td><td>Targets: box placement, Search Entire Level, Include Instances, Target Size Min / Max. Click Refresh after moving the covered meshes.</td></tr><tr><td>Cover buried in walls or floors</td><td>Clear Cover Inside Meshes with a larger Clearance.</td></tr><tr><td>Stacks too far apart or overlapping</td><td>Row Gap (negative sinks rows together).</td></tr></tbody></table></div></article>
 </main>
 <footer class="foot"><div class="wrap">&copy; Caster. PropMaster PCG for Unreal Engine 5.8. Unreal Engine is a trademark of Epic Games, Inc.</div></footer>
