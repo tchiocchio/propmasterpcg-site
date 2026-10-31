@@ -460,6 +460,8 @@ Removes cover buried in or pressed against another surface, checking **Clearance
 | Density | How tightly the surface is covered. 100 = a candidate every 45 cm. |
 | Chance of Covering Object | Chance that each object gets this category at all. |
 | Cover Spacing | Minimum distance between two cover meshes of this category. 0 = off. |
+| No Overlap / Bounds Override | Removes a cover mesh whose real bounds overlap another of this category (one survives at random). Bounds Override adds cm to each side; negative lets them touch. Cover Spacing only keeps centres apart. |
+| Stack Vertical | Piles copies of each cover mesh straight out of its surface: up on tops, sideways on walls, down when Flip Z Axis hangs them. Same rows, gap, stagger, row rotation and chance as the Spline tool; Taper is hidden (piles only). |
 | Clump Together | Gathers the cover into patches, identical to Clump Together in Distribution. |
 | Transforms | Position, rotation and scale for the cover, below. |
 | Align to Surface | The mesh's up axis follows the surface. Off keeps it upright. |
