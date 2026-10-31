@@ -183,6 +183,8 @@ Projection drops each point onto the surface below it. Main Mesh and Clusters ha
 
 ### Decals
 
+![Decals with every option open: materials, chance, cluster decals, size, scale and spin, rendering, seed and the decal cap.](images/decals.png)
+
 | Setting | What it does |
 | --- | --- |
 | Activate Decals / Decal Materials | Turns decals on. Materials must use the Deferred Decal domain. Each decal is an actor. |
