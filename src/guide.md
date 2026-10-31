@@ -155,19 +155,41 @@ With Placement set to Inside the Spline, random position offsets can push a mesh
 
 ### Projection: landing on the ground
 
+![Projection: Main Mesh and Clusters, each with its own settings.](images/projection-overview.png)
+
 Projection drops each point onto the surface below it. Main Mesh and Clusters have the same settings, each on its own.
+
+#### Main Mesh
+
+![Main Mesh projection settings.](images/projection-main.png)
 
 | Setting | What it does |
 | --- | --- |
 | Activate Projection | Projects onto the surface. Off keeps the spline's own height. |
-| Projection Type | Default, Mesh Only, Landscape Only, or Landscape and Mask Mesh: which surfaces the ray may land on. |
 | Use Landscape Heightfield | Much faster than rays on landscapes, when there is no snap limit or slope range. |
 | Align to Surface | Tilts each mesh to the surface. |
 | Snap to Surface Max Distance | Drops points whose surface is farther than this. 0 = no limit. |
 | Surface Angle Min / Max | Steepness allowed, in degrees: 0 = flat, 90 = vertical, 180 = ceiling. 30 to 40 keeps meshes off steep hills. |
-| Projection Height and Depth | Where the ray starts above the point and how far below it reaches. Lower them to land under a bridge or roof. |
+| Projection Type | Default, Mesh Only, Landscape Only, or Landscape and Mask Mesh: which surfaces the ray may land on. |
 | Overhang Cleanup | 0 = off. 1 removes any mesh hanging past the edge of its surface; 0.5 needs half of its footprint supported. |
-| Landscape Layers | **Only On / Never On Landscape Layer** by paint layer name, with a weight **Threshold** and a **Clearance** ring checked around each mesh (keeps tree canopies off roads). |
+
+#### Projection Height and Depth
+
+![Projection Height and Projection Depth.](images/projection-height-depth.png)
+
+**Projection Height** is where the ray starts above the point, and **Projection Depth** is how far below it reaches. Lower them to land under a bridge or roof.
+
+#### Landscape Layers
+
+![Landscape Layers: Only On, Never On, Threshold and Clearance.](images/projection-landscape-layers.png)
+
+**Only On Landscape Layer** and **Never On Landscape Layer** pick a paint layer by name. **Landscape Layer Threshold** is the paint weight that counts as on the layer. **Landscape Layer Clearance** checks a ring that far around each mesh, which keeps tree canopies off roads.
+
+#### Clusters
+
+![Cluster projection: the same settings as Main Mesh, applied to the cluster meshes.](images/projection-clusters.png)
+
+Identical to Main Mesh, applied to the cluster meshes, starting with **Activate Cluster Projection**.
 
 ### Cluster Mesh: smaller meshes around each main mesh
 
