@@ -50,6 +50,12 @@ Most changes regenerate on their own. Every random choice is seeded, so the same
 
 **Global Seed** offsets every random choice in the tool, on top of each layer's own seeds. **Randomize Global Seed** picks a new value and regenerates, a quick way to try a fresh variation of the whole tool. Type an earlier number back in to return to a result you liked.
 
+#### PCG Controllers
+
+![PCG Controllers: Convert to Mesh, Disable PCG, Enable PCG and Refresh.](images/pcg-controllers.png)
+
+**Convert to Mesh** bakes the spawned meshes into a new plain actor where they are, and switches the tool's PCG off so nothing spawns twice. **Disable PCG** removes the spawned meshes and stops regenerating; **Enable PCG** switches it back on and regenerates. **Refresh** rebuilds the layers and regenerates, which you need after editing a preset asset, or on the Mesh Cover tool after moving the meshes it covers.
+
 ## Spline tool
 
 The Spline tool places meshes along a spline or fills the area inside a closed spline. Each layer runs through the sections below, top to bottom.
