@@ -353,6 +353,12 @@ The same section holds **Main Mesh / Cluster Overhang Cleanup** (0 = off, 1 = re
 | Clump Together, No Overlapping | Same as the Spline tool. Keep Clump Pull low on uneven walls. |
 | Stack Vertical | Piles on every face, growing straight out of the surface: up from floors, sideways out of walls, down from ceilings. Taper is hidden (piles only). |
 
+#### Clump Together
+
+![Clump Together: the same controls as the Spline tool.](images/clump-together.png)
+
+Identical to the Spline tool's Clump Together. Keep Clump Pull low on uneven walls, since the pull moves meshes sideways.
+
 ### Volume-only Transforms
 
 | Setting | What it does |
@@ -461,6 +467,12 @@ Removes cover buried in or pressed against another surface, checking **Clearance
 | Height Min / Max | The band of each object to cover, in percent of its height (0 = bottom, 100 = top). Defaults: Top 66 to 100, Side 33 to 66, Bottom 0 to 33. |
 | Cover Scale By Height | Scale at Height Max (x1 at Height Min). 1 = off. |
 | Surface Angle Min / Max | Steepness to cover: 0 = tops, 90 = sides, 180 = undersides. |
+
+#### Clump Together
+
+![Clump Together: the same controls as Distribution, for this category's cover.](images/clump-together.png)
+
+Identical to Clump Together in Distribution, gathering this category's cover into patches.
 
 #### Transforms
 
