@@ -50,19 +50,45 @@ The Spline tool places meshes along a spline or fills the area inside a closed s
 
 ### Spawning: what gets placed
 
+![Spawning: what each layer places, from meshes and actors to tags and overlap rules.](images/spawning-overview.png)
+
 | Setting | What it does |
 | --- | --- |
 | Activate Main Mesh | Spawns this layer's main meshes. Off skips them; clusters and cover can still run. |
-| Static Meshes | The meshes picked for each point. Each entry has a **Weight** (2 = picked twice as often as 1, 0 = never). |
-| Static Meshes > Add Tag | Tags the spawned meshes, so other tools' tag filters can see them (for example, keep another spline's clusters off them). |
-| Static Meshes > Greybox Color | Spawns this mesh in a flat color for blockouts. Untick it to get its own materials back; the mesh asset is never changed. Cluster Mesh entries have it too. |
-| Static Meshes > Local Transforms | This mesh's own offset, rotation and scale, to fix off-centre pivots, wrong facing or mismatched sizes. **Random Rotation Steps** turns it by whole steps (90 = quarter turns) for modular pieces that must stay square. |
-| Static Meshes > Forward Axis | The mesh axis that runs along the spline, for Grammar and Mesh Along Spline. |
-| Grammar > Use Grammar | Lays the meshes end to end along the spline in a pattern of their **Symbol** letters instead of scattering. Along the spline only. The Cheat Sheet in the panel shows the pattern syntax. |
+| Static Meshes | The meshes picked for each point, each with its own controls (below). |
 | Actors | Blueprint actors picked at random alongside the meshes (each counts as Weight 1). They are real actors, so keep counts modest. |
 | Mesh Bounds Modifier | Grows or shrinks the layer's footprint (width and length only) for its clusters, tag filters and later layers' overlap checks. |
-| Tags | **Spawn Only On Tag** / **No Spawning on Tag** with a bounds modifier each: spawn only on, or never on, actors and meshes carrying a tag. |
-| Overlap | **No Overlap of Previous Index Spawns / Clusters**: keeps this layer clear of the layers above it. |
+
+#### Per mesh controls
+
+![Each Static Meshes entry: weight, greybox color, tag, local transforms, forward axis and grammar piece.](images/spawning-per-mesh.png)
+
+| Setting | What it does |
+| --- | --- |
+| Weight | How often this mesh is picked. 2 = twice as often as 1, 0 = never. |
+| Greybox Color | Spawns this mesh in a flat color for blockouts. Untick it to get its own materials back; the mesh asset is never changed. Cluster Mesh entries have it too. |
+| Add Tag | Tags the spawned meshes, so other tools' tag filters can see them (for example, keep another spline's clusters off them). |
+| Local Transforms | This mesh's own offset, rotation and scale, to fix off-centre pivots, wrong facing or mismatched sizes. **Random Rotation Steps** turns it by whole steps (90 = quarter turns) for modular pieces that must stay square. |
+| Forward Axis | The mesh axis that runs along the spline, for Grammar and Mesh Along Spline. |
+| Grammar Piece | This mesh's **Symbol** (its letter in the Grammar pattern) and **Grammar Length** (0 = the mesh's own length). |
+
+#### Grammar
+
+![Use Grammar with its pattern, and the Cheat Sheet of pattern syntax.](images/spawning-grammar.png)
+
+**Use Grammar** lays the meshes end to end along the spline in a pattern of their Symbol letters instead of scattering them. It works along the spline only. The **Cheat Sheet** in the panel lists the pattern syntax: `A, B` in order, `A*` repeat while it fits, `[A, B]3` a group three times, `{A, B}` pick one at random, `<A, B>` try A and fall back to B.
+
+#### Tag controls
+
+![Spawn Only On Tag and No Spawning on Tag, each with its own bounds modifier.](images/spawning-tags.png)
+
+**Spawn Only On Tag** spawns only on actors and meshes carrying that tag; **No Spawning on Tag** never spawns on them. Each has a bounds modifier that grows (positive) or insets (negative) the tagged area.
+
+#### Index control
+
+![No Overlap of Previous Index Spawns and Clusters.](images/spawning-index.png)
+
+**No Overlap of Previous Index Spawns / Clusters** keeps this layer clear of the meshes and clusters placed by the layers above it in the list.
 
 ### Distribution: where and how many
 
