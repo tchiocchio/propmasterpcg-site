@@ -249,7 +249,15 @@ Cluster position, rotation and scale offsets, each a Min and Max. **Global Unifo
 
 ### Optimize
 
+![Optimize: Main Mesh, Clusters and Cover Mesh by Intent, each with its own switches.](images/optimize-overview.png)
+
 Main Mesh, Clusters and Cover Mesh by Intent each have the same switches.
+
+#### Main Mesh
+
+![Main Mesh optimize switches. Clusters and Cover Mesh by Intent have the same set.](images/optimize-main.png)
+
+The same options appear for every mesh type: Clusters and Cover Mesh by Intent work exactly like Main Mesh, except that cover meshes have a **Collision** switch in place of No Collision.
 
 | Setting | What it does |
 | --- | --- |
