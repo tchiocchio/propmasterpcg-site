@@ -324,19 +324,51 @@ Cover Mesh by Intent grows smaller meshes over the main meshes (in the Spline an
 
 ### Entry settings
 
+![A Cover Mesh by Intent entry: Layer Title, Activate, the Facing, Top, Side, Bottom and Tags groups, Cover Seed and Clear Cover Inside Meshes.](images/cover-overview.png)
+
 | Setting | What it does |
 | --- | --- |
 | Layer Title | The entry's name, shown on the collapsed entry and in front of its sections. |
 | Activate | Master switch for the entry. Off places nothing but keeps Top, Side and Bottom as they were. |
-| Facing | Covers only the side facing a direction. **Facing Arrow** = the tool's forward direction (the Mesh Cover tool shows an orange arrow). **Face Toward Actor** = surfaces turned toward a picked actor. **Max Angle** sets how far a surface may turn away. |
+| Facing | Covers only the side facing a direction, below. |
 | Top / Side / Bottom | The three cover categories, below. |
-| Tags | **Spawn Only On Tag** / **No Spawning on Tag** areas for this entry. Tagged splines make a strip; **Spline Path** sets its width at each end (taper), **Edge Jitter**, **Jitter Scale** and **Edge Softness**. Other tagged actors use their bounds, grown or inset by **Mesh Bounds Modifier**. |
+| Tags | Tag areas for this entry, below. |
 | Cover Seed | Re-rolls this entry's cover. |
-| Clear Cover Inside Meshes / Clearance | Removes cover buried in or pressed against another surface, checking Clearance cm out from each point. |
+| Clear Cover Inside Meshes | Removes buried cover, below. |
+
+#### Facing
+
+![Facing Mode: Off (all sides), Facing Arrow or Face Toward Actor.](images/cover-facing.png)
+
+**Off (all sides)** covers every side. **Facing Arrow** covers the side facing the tool's forward direction (the Mesh Cover tool shows an orange arrow). **Face Toward Actor** covers surfaces turned toward a picked actor. **Max Angle** sets how far a surface may turn away.
+
+#### Tags
+
+![Tags: Spawn Only On Tag and No Spawning on Tag, each with a Mesh Bounds Modifier and a Spline Path.](images/cover-tags.png)
+
+**Spawn Only On Tag** and **No Spawning on Tag** set areas for this entry. Tagged splines make a strip: **Spline Path** sets its width at each end (**Width Start** and **Width End** for a taper), plus **Edge Jitter**, **Jitter Scale** and **Edge Softness**. Other tagged actors use their bounds, grown or inset by **Mesh Bounds Modifier**.
+
+#### Clear Cover Inside Meshes
+
+![Clear Cover Inside Meshes with its Clearance.](images/cover-clear.png)
+
+Removes cover buried in or pressed against another surface, checking **Clearance** cm out from each point.
 
 ### Top, Side and Bottom
 
-**Top** covers up-facing surfaces, found by rays cast down. **Side** covers the object's sides with sideways rays. **Bottom** covers the base, like moss creeping up from the ground. Each category has its own copy of these settings.
+**Top** covers up-facing surfaces, found by rays cast down. **Side** covers the object's sides with sideways rays. **Bottom** covers the base, like moss creeping up from the ground. Each category has its own copy of the same settings; only the Height defaults differ.
+
+#### Top
+
+![Top: covers the upper band, Height 66 to 100 percent by default.](images/cover-top.png)
+
+#### Side
+
+![Side: covers the middle band, Height 33 to 66 percent by default.](images/cover-side.png)
+
+#### Bottom
+
+![Bottom: covers the lower band, Height 0 to 33 percent by default.](images/cover-bottom.png)
 
 | Setting | What it does |
 | --- | --- |
@@ -346,13 +378,19 @@ Cover Mesh by Intent grows smaller meshes over the main meshes (in the Spline an
 | Density | How tightly the surface is covered. 100 = a candidate every 45 cm. |
 | Chance of Covering Object | Chance that each object gets this category at all. |
 | Cover Spacing | Minimum distance between two cover meshes of this category. 0 = off. |
-| Clump Together | Gathers the cover into patches, with Clump Pull and Min Spacing. |
-| Transforms | **Jitter**, **Position Offset** (X and Y slide along the surface, Z lifts or sinks), **Absolute Rotation**, **Rotation** and **Scale** Min / Max. |
+| Clump Together | Gathers the cover into patches, identical to Clump Together in Distribution. |
+| Transforms | Position, rotation and scale for the cover, below. |
 | Align to Surface | The mesh's up axis follows the surface. Off keeps it upright. |
 | Flip Z Axis | Hangs the meshes straight down from where they touch, for moss or vines dangling from a ledge. |
 | Height Min / Max | The band of each object to cover, in percent of its height (0 = bottom, 100 = top). Defaults: Top 66 to 100, Side 33 to 66, Bottom 0 to 33. |
 | Cover Scale By Height | Scale at Height Max (x1 at Height Min). 1 = off. |
 | Surface Angle Min / Max | Steepness to cover: 0 = tops, 90 = sides, 180 = undersides. |
+
+#### Transforms
+
+![Cover Transforms: Jitter, Position Offset, Absolute Rotation, Rotation and Scale.](images/cover-transforms.png)
+
+**Jitter** moves each cover mesh randomly along the surface. **Position Offset** Min / Max: X and Y slide along the surface, Z lifts or sinks. **Absolute Rotation** ignores the surface's rotation. **Rotation** and **Scale** Min / Max randomize each mesh.
 
 Optimize > Cover Mesh by Intent holds the cull distances, decals, wind, ray tracing, shadow and **Collision** switches for every entry of the layer. Cover meshes have no collision unless Collision is on.
 
