@@ -255,9 +255,21 @@ Main Mesh, Clusters and Cover Mesh by Intent each have the same switches.
 
 #### Main Mesh
 
-![Main Mesh optimize switches. Clusters and Cover Mesh by Intent have the same set.](images/optimize-main.png)
+![Main Mesh optimize switches.](images/optimize-main.png)
 
-The same options appear for every mesh type: Clusters and Cover Mesh by Intent work exactly like Main Mesh, except that cover meshes have a **Collision** switch in place of No Collision.
+The same options appear for every mesh type, described in the table below.
+
+#### Clusters
+
+![Clusters optimize switches, the same set as Main Mesh.](images/optimize-clusters.png)
+
+Identical to Main Mesh, for the cluster meshes.
+
+#### Cover Mesh by Intent
+
+![Cover Mesh by Intent optimize switches, with Collision in place of No Collision.](images/optimize-cover.png)
+
+Identical to Main Mesh for every cover entry in the layer, except that cover meshes have a **Collision** switch in place of No Collision. It is off by default.
 
 | Setting | What it does |
 | --- | --- |

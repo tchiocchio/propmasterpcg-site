@@ -105,8 +105,14 @@
 <figure><img src="images/optimize-overview.png" alt="Optimize: Main Mesh, Clusters and Cover Mesh by Intent, each with its own switches." loading="lazy"><figcaption>Optimize: Main Mesh, Clusters and Cover Mesh by Intent, each with its own switches.</figcaption></figure>
 <p>Main Mesh, Clusters and Cover Mesh by Intent each have the same switches.</p>
 <h4 id="main-mesh">Main Mesh</h4>
-<figure><img src="images/optimize-main.png" alt="Main Mesh optimize switches. Clusters and Cover Mesh by Intent have the same set." loading="lazy"><figcaption>Main Mesh optimize switches. Clusters and Cover Mesh by Intent have the same set.</figcaption></figure>
-<p>The same options appear for every mesh type: Clusters and Cover Mesh by Intent work exactly like Main Mesh, except that cover meshes have a <strong>Collision</strong> switch in place of No Collision.</p>
+<figure><img src="images/optimize-main.png" alt="Main Mesh optimize switches." loading="lazy"><figcaption>Main Mesh optimize switches.</figcaption></figure>
+<p>The same options appear for every mesh type, described in the table below.</p>
+<h4 id="clusters">Clusters</h4>
+<figure><img src="images/optimize-clusters.png" alt="Clusters optimize switches, the same set as Main Mesh." loading="lazy"><figcaption>Clusters optimize switches, the same set as Main Mesh.</figcaption></figure>
+<p>Identical to Main Mesh, for the cluster meshes.</p>
+<h4 id="cover-mesh-by-intent">Cover Mesh by Intent</h4>
+<figure><img src="images/optimize-cover.png" alt="Cover Mesh by Intent optimize switches, with Collision in place of No Collision." loading="lazy"><figcaption>Cover Mesh by Intent optimize switches, with Collision in place of No Collision.</figcaption></figure>
+<p>Identical to Main Mesh for every cover entry in the layer, except that cover meshes have a <strong>Collision</strong> switch in place of No Collision. It is off by default.</p>
 <div class="table"><table><thead><tr><th>Setting</th><th>What it does</th></tr></thead><tbody><tr><td>Cull Distance Start / End</td><td>Fades meshes out between these distances. 0 = never culled.</td></tr><tr><td>Receives Decals</td><td>Off keeps decals off these meshes (turn off for trees and grass).</td></tr><tr><td>World Position Offset</td><td>Off stops wind animation. Saves GPU on large counts and fixes blinking shadow blobs.</td></tr><tr><td>Visible in Ray Tracing</td><td>Off makes Lumen and ray tracing ignore them. Helps dense grass that shows dark blotches.</td></tr><tr><td>Cast Shadow</td><td>Off: no shadows. A big saving for grass, pebbles, debris and moss.</td></tr><tr><td>No Collision (main, clusters) / Collision (cover)</td><td>Main and cluster meshes can drop collision to save memory. Cover meshes have none unless you turn Collision on.</td></tr></tbody></table></div>
 <h3 id="debug">Debug</h3>
 <p><strong>Work in Debug Mode</strong> runs every placement step but spawns nothing, so regenerating is fast. The Show switches draw debug boxes for main, cluster and cover bounds, and shade slope ranges from white (Min) to black (Max).</p>
