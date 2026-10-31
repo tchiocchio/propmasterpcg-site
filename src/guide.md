@@ -44,6 +44,12 @@ Every tool's Details panel has the same top-level sections, in this order. Colla
 
 Most changes regenerate on their own. Every random choice is seeded, so the same settings always give the same result.
 
+#### Seed
+
+![Seed: Randomize Global Seed and the Global Seed value.](images/seed.png)
+
+**Global Seed** offsets every random choice in the tool, on top of each layer's own seeds. **Randomize Global Seed** picks a new value and regenerates, a quick way to try a fresh variation of the whole tool. Type an earlier number back in to return to a result you liked.
+
 ## Spline tool
 
 The Spline tool places meshes along a spline or fills the area inside a closed spline. Each layer runs through the sections below, top to bottom.
