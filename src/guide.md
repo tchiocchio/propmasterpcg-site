@@ -282,6 +282,8 @@ Identical to Main Mesh for every cover entry in the layer, except that cover mes
 
 ### Debug
 
+![Debug: Work in Debug Mode, plus bounds and slope views for main, cluster and cover meshes.](images/debug.png)
+
 **Work in Debug Mode** runs every placement step but spawns nothing, so regenerating is fast. The Show switches draw debug boxes for main, cluster and cover bounds, and shade slope ranges from white (Min) to black (Max).
 
 ## Volume tool
