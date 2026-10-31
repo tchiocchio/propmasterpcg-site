@@ -53,6 +53,7 @@ The Spline tool places meshes along a spline or fills the area inside a closed s
 | Activate Main Mesh | Spawns this layer's main meshes. Off skips them; clusters and cover can still run. |
 | Static Meshes | The meshes picked for each point. Each entry has a **Weight** (2 = picked twice as often as 1, 0 = never). |
 | Static Meshes > Add Tag | Tags the spawned meshes, so other tools' tag filters can see them (for example, keep another spline's clusters off them). |
+| Static Meshes > Greybox Color | Spawns this mesh in a flat color for blockouts. Untick it to get its own materials back; the mesh asset is never changed. Cluster Mesh entries have it too. |
 | Static Meshes > Local Transforms | This mesh's own offset, rotation and scale, to fix off-centre pivots, wrong facing or mismatched sizes. **Random Rotation Steps** turns it by whole steps (90 = quarter turns) for modular pieces that must stay square. |
 | Static Meshes > Forward Axis | The mesh axis that runs along the spline, for Grammar and Mesh Along Spline. |
 | Grammar > Use Grammar | Lays the meshes end to end along the spline in a pattern of their **Symbol** letters instead of scattering. Along the spline only. The Cheat Sheet in the panel shows the pattern syntax. |

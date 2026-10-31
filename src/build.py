@@ -142,6 +142,7 @@ def build():
       <div><h3>Stack Vertical</h3><p>Brick walls, sandbag walls, crate piles and rock towers from a single mesh list.</p></div>
       <div><h3>Footprint</h3><p>See instances, memory, streaming and GPU cost, and how much each optimize step saved.</p></div>
       <div><h3>Presets</h3><p>Save a look once and reuse it on any spline, volume or cover tool.</p></div>
+      <div><h3>Greybox Color</h3><p>Color-code any mesh for blockouts with one click, and get its real materials back just as fast.</p></div>
       <div><h3>Convert to Mesh</h3><p>Bake the result into highly optimized ISM (Instanced Static Mesh) geometry when you're done.</p></div>
     </div>
   </section>
