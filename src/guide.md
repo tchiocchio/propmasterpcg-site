@@ -94,7 +94,7 @@ The Spline tool places meshes along a spline or fills the area inside a closed s
 
 | Setting | What it does |
 | --- | --- |
-| Spawn Inside Spline | On fills the closed spline's area. Off places along the spline, where Mesh Along Spline and Grammar are available. |
+| Placement | **Along the Spline** places a line of meshes (Mesh Along Spline and Grammar work here). **Inside the Spline** fills the closed spline's area. Each layer picks its own, so one spline can have a wall along it and trees inside. |
 | Density | Percent of candidate points kept. |
 | Distance | Spacing between candidate points. |
 | Use Count / Count | Spawns an exact number of points instead of using Distance. |
