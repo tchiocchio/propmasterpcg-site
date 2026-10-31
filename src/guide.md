@@ -452,6 +452,8 @@ Optimize > Cover Mesh by Intent holds the cull distances, decals, wind, ray trac
 
 ## Footprint
 
+![Footprint Controllers: the four buttons, then Changes, Notes and the Rendering, Memory, Loading and Streaming, GPU Cost and Meshes groups.](images/footprint.png)
+
 The Footprint section, under Footprint Controllers, shows what the tool made and what it costs. It updates by itself after every generate. **Notes** and **Changes** sit at the top: Notes flags likely problems, and Changes shows how far each number moved.
 
 ### Buttons
