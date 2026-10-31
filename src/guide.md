@@ -136,6 +136,8 @@ Cover Mesh by Intent puts Top cover only on the top piece of each stack and Bott
 
 ### Transforms
 
+![Transforms: jitter, global and random offsets for position, rotation and scale, and the offset seed.](images/transforms.png)
+
 | Setting | What it does |
 | --- | --- |
 | Jitter | Randomises where each point lands inside its spacing cell. 0 = exact spacing (lights, fence posts), 1 = anywhere in the cell. |
@@ -144,6 +146,12 @@ Cover Mesh by Intent puts Top cover only on the top piece of each stack and Bott
 | Keep Inside Spline / Keep Inside Margin | Inside the spline: a mesh pushed outside by the offsets gets a new or smaller offset, and is only dropped if its own spot is outside. Margin keeps big meshes from hanging over the edge. |
 | Absolute Rotation | Uses Global Rotation as the final rotation instead of following the surface. |
 | Offset Seed | Re-rolls the random offsets. |
+
+#### Keep Inside Spline
+
+![Keep Inside Spline, with its margin, shows once it is ticked.](images/keep-inside-spline.png)
+
+With Placement set to Inside the Spline, random position offsets can push a mesh past the edge. **Keep Inside Spline** gives that mesh a new or smaller offset so it stays near its spot, and only drops it if its own spot is outside. **Keep Inside Margin** is how far inside the edge a mesh's centre must stay; raise it for big meshes so they don't hang over (about half the mesh's width).
 
 ### Projection: landing on the ground
 
