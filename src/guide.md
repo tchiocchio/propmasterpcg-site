@@ -91,7 +91,7 @@ Stack Vertical builds rows of each mesh on top of itself. Along the spline it ma
 | Taper (walls only) | Each row is this much smaller than the one below (0.1 = 10%), for sandbag or dry-stone walls. |
 | Keep Stacking Chance | Above Rows Min, the chance a stack goes on to the next row. Below 1 gives a ragged top or piles of different heights. Nothing ever floats. |
 
-Cover Mesh by Intent puts Top cover only on the top piece of each stack and Bottom cover only on the bottom row. It is not available with Mesh Along Spline.
+Cover Mesh by Intent puts Top cover only on the top piece of each stack and Bottom cover only on the bottom row. It is not available with Mesh Along Spline. Actors stack too: their size comes from the Blueprint's static meshes, so a set with tall parts (poles, lamps) stacks on its tallest part; use a negative Row Gap to pull those rows down.
 
 ### Transforms
 
