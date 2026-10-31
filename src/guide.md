@@ -92,6 +92,10 @@ The Spline tool places meshes along a spline or fills the area inside a closed s
 
 ### Distribution: where and how many
 
+![Distribution with Placement set to Along the Spline: Start and End and Mesh Along Spline appear.](images/distribution-along.png)
+
+![Distribution with Placement set to Inside the Spline: Inset Within Closed Spline appears instead.](images/distribution-inside.png)
+
 | Setting | What it does |
 | --- | --- |
 | Placement | **Along the Spline** places a line of meshes (Mesh Along Spline and Grammar work here). **Inside the Spline** fills the closed spline's area. Each layer picks its own, so one spline can have a wall along it and trees inside. |
