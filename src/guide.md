@@ -171,15 +171,39 @@ Projection drops each point onto the surface below it. Main Mesh and Clusters ha
 
 ### Cluster Mesh: smaller meshes around each main mesh
 
-| Setting | What it does |
-| --- | --- |
-| Activate Cluster Mesh | Spawns clusters around each main mesh. |
-| Meshes | Cluster meshes with a Weight each. |
-| Amount & Size | **Density** (percent), **Density at Max Distance** (thins toward the edge), **Chance to Cluster** (share of main meshes that get one), **Size** (half-size in cm) and **Distance Scale Amount** (scale at the edge). |
-| Clump Together, Seed | Same as Distribution, for the clusters. |
-| Transforms | Cluster position, rotation and scale offsets, plus **Keep Clusters Inside** with its margin. |
-| Around the Main Mesh | **Main Object Tightness** pushes clusters away (positive) or lets them closer (negative). **Follow Main Mesh** removes a cluster when its main mesh is removed. **Distance from Main Mesh** caps how far clusters reach. |
-| Overlap | **No Overlap** keeps cluster meshes apart, with a **Bounds Override**. |
+![Cluster Mesh: activate it, list the cluster meshes, then open each group below to shape the clusters.](images/cluster-overview.png)
+
+**Activate Cluster Mesh** spawns clusters around each main mesh, and **Meshes** lists the cluster meshes with a Weight each. **Seed** reshuffles the clusters without touching the main meshes.
+
+#### Amount & Size
+
+![Amount & Size: density, density at the edge, chance to cluster, size and distance scale.](images/cluster-amount-size.png)
+
+**Density** (percent) sets how many clusters spawn, and **Density at Max Distance** thins them toward the edge. **Chance to Cluster** is the share of main meshes that get a cluster at all. **Size** is the half-size of the cluster area in cm, and **Distance Scale Amount** sets the scale of meshes at the edge.
+
+#### Clump Together
+
+![Clump Together for clusters: Clumping, Clump Size, Clump Pull and Min Spacing.](images/cluster-clump.png)
+
+Identical to Clump Together in Distribution, applied to the cluster meshes.
+
+#### Transforms
+
+![Cluster Transforms: position, rotation and scale offsets, Keep Clusters Inside and Global Uniform Cluster Scale.](images/cluster-transforms.png)
+
+Cluster position, rotation and scale offsets, each a Min and Max. **Global Uniform Cluster Scale** keeps scaling even on all axes. **Keep Clusters Inside** works the same as Keep Inside Spline, with its own margin.
+
+#### Around the Main Mesh
+
+![Around the Main Mesh: Main Object Tightness, Follow Main Mesh and Distance from Main Mesh.](images/cluster-around-main.png)
+
+**Main Object Tightness** pushes clusters away from the main mesh (positive) or lets them closer (negative). **Follow Main Mesh** removes a cluster when its main mesh is removed. **Distance from Main Mesh** caps how far clusters reach.
+
+#### Overlap
+
+![Overlap: No Overlap, with its Bounds Override.](images/cluster-overlap.png)
+
+**No Overlap** keeps cluster meshes apart, and **Bounds Override** sets the spacing size it uses.
 
 ### Decals
 
