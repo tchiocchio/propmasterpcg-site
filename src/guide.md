@@ -452,7 +452,7 @@ Optimize > Cover Mesh by Intent holds the cull distances, decals, wind, ray trac
 
 ## Footprint
 
-![Footprint Controllers: the four buttons, then Changes, Notes and the Rendering, Memory, Loading and Streaming, GPU Cost and Meshes groups.](images/footprint.png)
+![Footprint after adding a mesh: Changes compares with the baseline (GPU Cost up 27%), and Notes names the mesh without Nanite.](images/footprint.png)
 
 The Footprint section, under Footprint Controllers, shows what the tool made and what it costs. It updates by itself after every generate. **Notes** and **Changes** sit at the top: Notes flags likely problems, and Changes shows how far each number moved.
 
@@ -467,26 +467,60 @@ The Footprint section, under Footprint Controllers, shows what the tool made and
 
 ### The numbers
 
-| Group | Number | What it means |
-| --- | --- | --- |
-| Rendering | Instances | Mesh instances this tool spawned. |
-| Rendering | Mesh Components | About one per mesh and settings combination; each is at least one draw call per pass. Fewer is better. |
-| Rendering | Unique Meshes | Different mesh assets in use. |
-| Rendering | Nanite / Non-Nanite Instances | Nanite stays cheap when dense. Large non-Nanite counts are the usual performance trap: enable Nanite or add cull distances. |
-| Rendering | Non-Nanite Triangles (LOD 0) | The worst case up close. |
-| Rendering | Shadow-Casting, WPO-Animated, Ray-Traced Instances | How many instances the matching Optimize switches leave on. |
-| Rendering | Decal Actors, Other Spawned Actors | Each is a full actor. Keep decals in the hundreds, not thousands. |
-| Memory | Instance Memory (MB) | Transforms, render data and collision bodies for these instances. |
-| Memory | Instances With Collision | Each carries a physics body. Optimize > No Collision removes them. |
-| Memory | Mesh Assets (MB) | The mesh assets used, shared with anything else using them. Textures and materials are not counted. |
-| Loading and Streaming | Instance Data on Disk (MB, est.) | Roughly what the level has to read when this tool loads. |
-| Loading and Streaming | Mesh Files (MB, editor) | Mesh asset file sizes in the editor. Cooked builds are usually smaller. |
-| Loading and Streaming | Tool Size (m) | Width and length of everything spawned. With World Partition, one big actor loads all its instances at once. |
-| Loading and Streaming | Spatially Loaded, PCG Partitioned | Whether World Partition streams the tool by distance, and whether the PCG output is split into cells. |
-| Loading and Streaming | Last Generate (s) | How long the last full generate took in the editor. |
-| GPU Cost | GPU Cost (ms), Share of Frame (%), FPS With / Without Tool | Set by Measure GPU Cost. **Measured** says when, and whether the tool has changed since. |
+#### Rendering
 
-**Meshes (most instances first)** lists the heaviest meshes, so you know where to start optimizing.
+![Rendering: instance, component, mesh, Nanite, triangle, shadow, wind, ray tracing and actor counts.](images/footprint-rendering.png)
+
+| Number | What it means |
+| --- | --- |
+| Instances | Mesh instances this tool spawned. |
+| Mesh Components | About one per mesh and settings combination; each is at least one draw call per pass. Fewer is better. |
+| Unique Meshes | Different mesh assets in use. |
+| Nanite / Non-Nanite Instances | Nanite stays cheap when dense. Large non-Nanite counts are the usual performance trap: enable Nanite or add cull distances. |
+| Non-Nanite Triangles (LOD 0) | The worst case up close. |
+| Shadow-Casting, WPO-Animated, Ray-Traced Instances | How many instances the matching Optimize switches leave on. |
+| Decal Actors, Other Spawned Actors | Each is a full actor. Keep decals in the hundreds, not thousands. |
+
+#### Memory
+
+![Memory: Instance Memory, Instances With Collision and Mesh Assets.](images/footprint-memory.png)
+
+| Number | What it means |
+| --- | --- |
+| Instance Memory (MB) | Transforms, render data and collision bodies for these instances. |
+| Instances With Collision | Each carries a physics body. Optimize > No Collision removes them. |
+| Mesh Assets (MB) | The mesh assets used, shared with anything else using them. Textures and materials are not counted. |
+
+#### Loading and Streaming
+
+![Loading and Streaming: disk size, mesh files, tool size, streaming and the last generate time.](images/footprint-loading.png)
+
+| Number | What it means |
+| --- | --- |
+| Instance Data on Disk (MB, est.) | Roughly what the level has to read when this tool loads. |
+| Mesh Files (MB, editor) | Mesh asset file sizes in the editor. Cooked builds are usually smaller. |
+| Tool Size (m) | Width and length of everything spawned. With World Partition, one big actor loads all its instances at once. |
+| Spatially Loaded, PCG Partitioned | Whether World Partition streams the tool by distance, and whether the PCG output is split into cells. |
+| Last Generate (s) | How long the last full generate took in the editor. |
+
+#### GPU Cost
+
+![GPU Cost after Measure GPU Cost: the tool's cost in ms, its share of the frame, and frame time and FPS with and without it.](images/footprint-gpu.png)
+
+Filled in by **Measure GPU Cost**. **GPU Cost (ms)** is the difference between **GPU Frame With Tool** and **GPU Frame Without Tool**, and **Share of Frame** is that difference as a percent of the frame. **FPS With / Without Tool** are the GPU-bound frame rates. **Measured** says when and from where, and whether the tool has changed since.
+
+#### Meshes (most instances first)
+
+![Meshes, most instances first: each mesh's count, Nanite or triangle count, and flags such as wind, shadows and collision.](images/footprint-meshes.png)
+
+Lists every mesh, heaviest first, so you know where to start optimizing. Each line gives the instance count, then what makes it costly. Some examples from the screenshot:
+
+- **fern_01_02: 5,415 instances, Nanite, 3,549 cast shadows** means a dense Nanite mesh where most copies still cast shadows. Turning off Cast Shadow for small ferns is a big saving.
+- **1M_CubeWithSocket: 1,353 instances, 12 tris each (no Nanite), collision** means no Nanite and every copy has collision. Notes flags this one at the top; enable Nanite or set cull distances, and turn on No Collision if nothing needs to hit it.
+- **openWorld_flower_01_02: 2,428 instances, Nanite, wind (WPO)** means every copy animates in the wind. Turning off World Position Offset for distant or tiny flowers saves GPU.
+- **SM_Barrel_02_Ropes: 95 instances, 3,584 tris each (no Nanite), collision** is a low count but heavy per copy without Nanite, a good candidate for enabling Nanite.
+
+In the top screenshot, a baseline was set before adding the cube mesh. **Changes** shows GPU Cost rising from 1.95 to 2.46 ms (+27%), and **Notes** names the mesh responsible.
 
 ## Tips and troubleshooting
 
