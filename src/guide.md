@@ -175,6 +175,12 @@ Projection drops each point onto the surface below it. Main Mesh and Clusters ha
 
 **Activate Cluster Mesh** spawns clusters around each main mesh, and **Meshes** lists the cluster meshes with a Weight each. **Seed** reshuffles the clusters without touching the main meshes.
 
+#### Meshes
+
+![A Cluster Mesh entry: Static Mesh, Weight and Greybox Color.](images/cluster-meshes.png)
+
+Each entry is one cluster mesh. **Weight** sets how often it is picked compared with the others. **Greybox Color** works the same as on Static Meshes: tick it and pick a color to show the mesh flat-shaded in that color.
+
 #### Amount & Size
 
 ![Amount & Size: density, density at the edge, chance to cluster, size and distance scale.](images/cluster-amount-size.png)
