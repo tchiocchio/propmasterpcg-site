@@ -54,6 +54,12 @@ Most changes regenerate on their own. Every random choice is seeded, so the same
 
 The Spline tool places meshes along a spline or fills the area inside a closed spline. Each layer runs through the sections below, top to bottom.
 
+### Default controls
+
+![Default: Set Spline Closed, Set Spline Open and Show/Hide Billboard.](images/spline-default.png)
+
+**Set Spline Closed** joins the last spline point back to the first, making a loop that Inside the Spline can fill. **Set Spline Open** breaks the loop again. **Show/Hide Billboard** toggles the tool's editor icon in the viewport; it never shows in game.
+
 ### Spawning: what gets placed
 
 ![Spawning: what each layer places, from meshes and actors to tags and overlap rules.](images/spawning-overview.png)
