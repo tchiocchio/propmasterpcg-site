@@ -110,7 +110,15 @@ The Spline tool places meshes along a spline or fills the area inside a closed s
 | Start and End (along only) | **Fit to Curve** adjusts spacing to fit the spline exactly. **Start / End Offset** leave the ends empty. |
 | Activate Mesh Along Spline (along only) | Bends one mesh along the whole spline (pipes, fences, curbs) instead of scattering. **Mesh Along Spline Scale** sets its thickness. |
 
+#### Clump Together
+
+![Clump Together: Clumping, Clump Size, Clump Pull and Min Spacing.](images/clump-together.png)
+
+Clump Together gathers the meshes into patches with open ground between them. **Clumping** goes from 0 (an even scatter) to 1 (tight clumps). **Clump Size** sets how big a patch and the gaps between patches are. **Clump Pull** moves the kept meshes toward the middle of their patch, and **Min Spacing** then pushes any that end up too close apart again, without removing any.
+
 ### Stack Vertical
+
+![Stack Vertical: rows, gap, stagger, row rotation and the chance to keep stacking.](images/stack-vertical.png)
 
 Stack Vertical builds rows of each mesh on top of itself. Along the spline it makes a **wall**; inside the spline each point becomes its own **pile**. Rows always sit on the real size of the mesh below, and a tilted piece makes a stack that leans with it.
 
