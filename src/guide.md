@@ -20,7 +20,7 @@ All three share the same building blocks: layers of main meshes, Cluster Mesh ar
 
 ## Panel basics
 
-![A layer: its Layer Title is added in front of every section's name, and Mute / Solo sit right under it.](images/layer-title-mute-solo.png)
+![The whole panel, top to bottom: Selection, the layers, Generated warnings, Seed, Footprint, Default, PCG Controllers and Preset Controllers.](images/panel-overview.png)
 
 Every tool's Details panel has the same top-level sections, in this order. Collapsing a layer and opening it again folds its sections, so long panels stay easy to scan.
 
@@ -65,6 +65,8 @@ Most changes regenerate on their own. Every random choice is seeded, so the same
 ## Spline tool
 
 The Spline tool places meshes along a spline or fills the area inside a closed spline. Each layer runs through the sections below, top to bottom.
+
+![A layer: its Layer Title is added in front of every section's name, and Mute / Solo sit right under it.](images/layer-title-mute-solo.png)
 
 ### Default controls
 
