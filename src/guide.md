@@ -108,7 +108,7 @@ The Spline tool places meshes along a spline or fills the area inside a closed s
 
 ![Spawn Only On Tag and No Spawning on Tag, each with its own bounds modifier.](images/spawning-tags.png)
 
-**Spawn Only On Tag** spawns only on actors and meshes carrying that tag; **No Spawning on Tag** never spawns on them. Each has a bounds modifier that grows (positive) or insets (negative) the tagged area.
+**Spawn Only On Tags** spawns only on actors and meshes carrying any of the listed tags; **No Spawning on Tags** never spawns on them. Add a tag with the + button, one per entry. Each list has a bounds modifier that grows (positive) or insets (negative) the tagged area.
 
 #### Index control
 
@@ -428,7 +428,7 @@ Cover Mesh by Intent grows smaller meshes over the main meshes (in the Spline an
 
 ![Tags: Spawn Only On Tag and No Spawning on Tag, each with a Mesh Bounds Modifier and a Spline Path.](images/cover-tags.png)
 
-**Spawn Only On Tag** and **No Spawning on Tag** set areas for this entry. Tagged splines make a strip: **Spline Path** sets its width at each end (**Width Start** and **Width End** for a taper), plus **Edge Jitter**, **Jitter Scale** and **Edge Softness**. Other tagged actors use their bounds, grown or inset by **Mesh Bounds Modifier**.
+**Spawn Only On Tags** and **No Spawning on Tags** set areas for this entry from actors carrying any of the listed tags. Tagged splines make a strip: **Spline Path** sets its width at each end (**Width Start** and **Width End** for a taper), plus **Edge Jitter**, **Jitter Scale** and **Edge Softness**. Other tagged actors use their bounds, grown or inset by **Mesh Bounds Modifier**.
 
 #### Clear Cover Inside Meshes
 
